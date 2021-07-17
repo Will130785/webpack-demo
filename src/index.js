@@ -1,20 +1,18 @@
 import _ from 'lodash'
-import './style.css'
-import Icon from './logo.png'
+import printMe from './print'
 
 function component () {
   const element = document.createElement('div')
+  const btn = document.createElement('button')
 
   // Lodash, currently included via a script, is required for this line to work
   // Lodash now imported
   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
 
-  // Add he image to our exisiting div
-  const myIcon = new Image()
-  myIcon.src = Icon
+  btn.innerHTML = 'Click me and check the console'
+  btn.onclick = printMe
 
-  element.appendChild(myIcon)
+  element.appendChild(btn)
 
   return element
 }
